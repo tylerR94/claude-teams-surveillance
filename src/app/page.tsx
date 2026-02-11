@@ -52,7 +52,8 @@ export default function Home() {
       }
     });
 
-    ws.on('team:update', () => {
+    ws.on('team:update', (data) => {
+      console.log('Team update received:', data);
       fetchTeams();
       if (selectedTeam) {
         fetchTeamDetails(selectedTeam);
@@ -73,8 +74,17 @@ export default function Home() {
 
     ws.connect();
 
+    // Set up polling as backup (every 5 seconds)
+    const pollInterval = setInterval(() => {
+      if (selectedTeam) {
+        fetchTeamDetails(selectedTeam);
+      }
+      fetchTeams();
+    }, 5000);
+
     return () => {
       ws.disconnect();
+      clearInterval(pollInterval);
     };
   }, [selectedTeam]);
 
