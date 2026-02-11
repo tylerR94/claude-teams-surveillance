@@ -146,7 +146,15 @@ app.get('/api/teams/:teamName', (req, res) => {
 
     const sessionId = activeSessions.get(teamName);
     const session = sessionId ? db.getActiveSession(teamName) : null;
-    const agents = sessionId ? db.getAgents(sessionId) : [];
+
+    // Use agents from live config.json instead of database
+    const agents = team.config.members ? team.config.members.map(member => ({
+      name: member.name,
+      agent_type: member.agentType || 'unknown',
+      model: member.model || 'unknown',
+      status: 'active' // Default status
+    })) : [];
+
     const tasks = sessionId ? db.getTasks(sessionId) : [];
     const messages = sessionId ? db.getMessages(sessionId) : [];
     const events = sessionId ? db.getEvents(sessionId, 50) : [];
