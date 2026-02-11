@@ -1,0 +1,41 @@
+{
+  "name": "claude-teams-surveillance-dashboard",
+  "version": "1.0.0",
+  "description": "Claude Teams & Surveillance Dashboard - Real-time monitoring for Claude Code agent teams",
+  "main": "server/index.js",
+  "scripts": {
+    "dev": "concurrently \"node server/index.js\" \"next dev -p 3848\"",
+    "build": "next build",
+    "start": "node server/index.js & next start -p 3848",
+    "server": "node server/index.js",
+    "frontend": "next dev -p 3848"
+  },
+  "keywords": ["claude", "agent-teams", "monitoring", "dashboard"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "next": "^14.2.0",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "express": "^4.18.2",
+    "ws": "^8.16.0",
+    "chokidar": "^3.6.0",
+    "cors": "^2.8.5",
+    "recharts": "^2.12.0"
+  },
+  "optionalDependencies": {
+    "better-sqlite3": "^9.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "@types/ws": "^8.5.10",
+    "@types/better-sqlite3": "^7.6.9",
+    "typescript": "^5.3.3",
+    "tailwindcss": "^3.4.0",
+    "postcss": "^8.4.35",
+    "autoprefixer": "^10.4.17",
+    "concurrently": "^8.2.2"
+  }
+}
