@@ -281,6 +281,10 @@ SQLite database with the following tables:
 2. Check file permissions on `~/.claude/` directory
 3. Restart the surveillance server
 
+### Agent Teams inbox polling issues
+
+If teammates send messages but the team lead never receives them, see the **[Known Issues](KNOWN_ISSUES.md)** document for a detailed fix for the inbox polling bug.
+
 ## 🤝 Contributing
 
 Contributions welcome! This is designed to be a community tool.
