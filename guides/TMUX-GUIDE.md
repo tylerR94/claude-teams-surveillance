@@ -100,6 +100,35 @@ tmux new -s agent-surveillance
 tmux attach -t agent-surveillance
 ```
 
+### 4. Enable Delegate Mode (Team Lead)
+
+**⚠️ IMPORTANT:** When using tmux with agent teams, set your team lead session to **delegate mode**.
+
+```bash
+# In your team lead pane (where you run 'claude'):
+# Press Shift+Tab repeatedly until you see "Delegate Mode" indicator
+
+# Or press Shift+Tab once from default mode
+```
+
+**What is Delegate Mode?**
+- Allows the team lead to focus on high-level coordination
+- Agents work more autonomously without constant approval prompts
+- Better for tmux workflows where you're monitoring via dashboard
+- Reduces context switching between panes
+
+**Visual indicator in Claude Code:**
+```
+┌─────────────────────────────────────┐
+│ Claude Code - Delegate Mode 🔄      │
+│ (Agents can work more autonomously) │
+└─────────────────────────────────────┘
+```
+
+**To cycle between modes:**
+- `Shift+Tab` - Cycle forward through modes
+- Default → Delegate → Ask → Back to Default
+
 ## 🎯 Recommended tmux Layout
 
 ### Option 1: Dashboard + Project Layout
@@ -511,6 +540,35 @@ Ctrl+b, z    # Zoom in/out (toggle)
 ```
 
 Perfect for reading agent output!
+
+### 6. Use Delegate Mode for Team Lead
+**Best Practice:** Always run your team lead in delegate mode when using tmux.
+
+```bash
+# In your team lead pane (where 'claude' is running):
+# Press Shift+Tab to enter Delegate Mode
+```
+
+**Why Delegate Mode with tmux?**
+- ✅ Less context switching between panes
+- ✅ Agents work more autonomously
+- ✅ Better for monitoring via surveillance dashboard
+- ✅ Fewer approval interruptions
+
+**Workflow:**
+```
+1. Start tmux session
+2. Create panes (dashboard, team lead, agents)
+3. In team lead pane: Press Shift+Tab → Delegate Mode
+4. Monitor everything via dashboard + tmux panes
+5. Agents can work independently while you coordinate
+```
+
+**When to use delegate mode:**
+- ✅ Multi-agent teams (3+ agents)
+- ✅ Long-running tasks
+- ✅ When monitoring via dashboard
+- ❌ NOT for sensitive operations requiring approval
 
 ## 🔧 Troubleshooting
 

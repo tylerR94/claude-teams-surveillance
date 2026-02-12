@@ -320,6 +320,37 @@ PORT=8080 bun run dev
 
 ---
 
+## 💡 Best Practices for Agent Teams
+
+### Use Delegate Mode (tmux users)
+
+If you're using tmux, **enable delegate mode** in your team lead session:
+
+```bash
+# In the pane where Claude Code team lead is running:
+# Press Shift+Tab to cycle into Delegate Mode
+```
+
+**Why delegate mode?**
+- ✅ Reduces context switching between panes
+- ✅ Agents work more autonomously
+- ✅ Better for monitoring workflows (via dashboard)
+- ✅ Fewer approval interruptions
+
+**How to enable:**
+1. Start your agent team in the team lead pane
+2. Press `Shift+Tab` repeatedly until you see "Delegate Mode" indicator
+3. Agents can now work more independently while you coordinate
+
+### Other Tips
+
+- **Start dashboard first** - Launch the surveillance dashboard before creating teams
+- **Use named tmux sessions** - `tmux new -s my-project` for easy identification
+- **Monitor token usage** - Keep an eye on costs via the dashboard
+- **Close teams properly** - Use proper shutdown before exiting to avoid inbox polling bugs (see [KNOWN_ISSUES.md](KNOWN_ISSUES.md))
+
+---
+
 ## 📖 Next Steps
 
 After completing this guide:
