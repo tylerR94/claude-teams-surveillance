@@ -11,6 +11,56 @@ tmux is the classic choice for terminal multiplexing:
 - ✅ Works over SSH
 - ✅ Battle-tested and stable
 
+---
+
+## ⚠️ CRITICAL: Enable Mouse Support First!
+
+**Before using tmux with Agent Teams, you MUST enable mouse support!**
+
+### The Problem
+
+By default, tmux doesn't allow clicking between panes. You'll be stuck using keyboard shortcuts (`Ctrl+b` + arrow keys) which is frustrating when working with multiple agents.
+
+### The Solution
+
+**Add this to your `~/.tmux.conf` file:**
+
+```bash
+# Edit your tmux config
+nano ~/.tmux.conf
+
+# Add this line:
+# Enable mouse support (click panes, resize, scroll)
+set -g mouse on
+
+# Save and exit (Ctrl+X, then Y, then Enter)
+```
+
+**Then reload tmux:**
+
+```bash
+# If you're in a tmux session:
+tmux source-file ~/.tmux.conf
+
+# Or restart tmux completely:
+tmux kill-server
+tmux
+```
+
+### Verify It Works
+
+After reloading, you should be able to:
+- ✅ Click between panes to switch focus
+- ✅ Click and drag pane borders to resize
+- ✅ Scroll with your mouse wheel
+
+**If clicking still doesn't work:**
+1. Check `~/.tmux.conf` has the line (no typos!)
+2. Make sure you reloaded: `tmux source-file ~/.tmux.conf`
+3. Try creating a fresh session: `tmux new -s test`
+
+---
+
 ## 🚀 Quick Start
 
 ### 1. Install tmux

@@ -52,6 +52,12 @@ Real-time monitoring dashboard for [Claude Code Agent Teams](https://code.claude
 
 ## 🚀 Quick Start
 
+> **👉 NEW USERS: START HERE!**
+>
+> **[📖 Read the Complete Getting Started Guide](GETTING_STARTED.md)**
+>
+> This guide covers everything: prerequisites, the critical tmux mouse support fix, installation, and choosing your terminal setup.
+
 ### Prerequisites
 
 - Node.js 18+ or Bun
